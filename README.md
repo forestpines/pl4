@@ -1,9 +1,13 @@
 # Geom99 - Checklist Week 4
 
-## Task 2
-
+## TASK 2
 Three Links to hosted tree feature layer: 
 
-You will find associated starter files here and instructions how to proceed in the D2L checklist titled [Week 1 and 2 Checklist: Google Maps](https://fleming.desire2learn.com/d2l/lms/checklist/viewchecklist.d2l?checklistId=11564&ou=165911)
+## Developers Details Item Page
+https://developers.arcgis.com/layers/3f7706b87dd84eaa90f2e076b78193e0
 
-## Before you begin
+## ArcGIS Online Items Page
+https://fleming.maps.arcgis.com/home/item.html?id=3f7706b87dd84eaa90f2e076b78193e0
+
+## REST API (without token)
+https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/week4list_treesdemoat/FeatureServer
