@@ -1,8 +1,7 @@
 # Geom99 - Checklist Week 4
 
 ## TASK 2
-Three Links to hosted tree feature layer: 
-
+Three Links to my hosted tree feature layer: 
 ## Developers Details Item Page
 https://developers.arcgis.com/layers/3f7706b87dd84eaa90f2e076b78193e0
 
