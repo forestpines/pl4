@@ -35,27 +35,94 @@
         line-height: 16px;
       }
     </style>
-<!--JS reference  -->
+   <!--JS reference  -->
     <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.22/"></script>
 
     <script>
-      require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+      require(["esri/config","esri/Map", "esri/views/MapView", "esri/Graphic",
+      "esri/layers/GraphicsLayer"], function (esriConfig,Map, MapView, Graphic, GraphicsLayer) {
 
-        esriConfig.apiKey = "AAPK57a67a5738474c6a90412e22770e2bd7TlVxqm4KfR7v5FfjH4mahFxQpBG3LvjixEKGd2aEVVZcXf-kpkwm7MD2W91y4rav";
+      esriConfig.apiKey = "AAPK57a67a5738474c6a90412e22770e2bd7TlVxqm4KfR7v5FfjH4mahFxQpBG3LvjixEKGd2aEVVZcXf-kpkwm7MD2W91y4rav";
 
-        const map = new Map({
-          basemap: "arcgis-colored-pencil" // Basemap layer service - changed basemap from gallery
-        });
-
-        const view = new MapView({
-          map: map,
-          center: [146.26373, -41.36992], // Longitude, latitude the Hamlet of Nowhere Else in Tasmania Australia
-          zoom: 14, // Zoom level
-          container: "viewDiv" // Div element
-        });
-
+      const map = new Map({
+        basemap: "arcgis-colored-pencil" // Basemap layer service - changed basemap from gallery
       });
+
+      const view = new MapView({
+        map: map,
+        center: [146.26373, -41.36992], // Longitude, latitude the Hamlet of Nowhere Else in Tasmania Australia
+        zoom: 14, // Zoom level
+        container: "viewDiv" // Div element
+      });
+
+      const graphicsLayer = new GraphicsLayer();
+      map.add(graphicsLayer);
+
+      const point = { //Create a point
+          type: "point",
+          longitude: 146.247030,
+          latitude: -41.372206
+      };
+      const simpleMarkerSymbol = {
+          type: "simple-marker",
+          color: [226, 119, 40],  // Orange
+          outline: {
+              color: [255, 255, 255], // White
+              width: 1
+          }
+      };
+
+      const pointGraphic = new Graphic({
+        geometry: point,
+        symbol: simpleMarkerSymbol
+      });
+      graphicsLayer.add(pointGraphic);
+     
+      // Create a line geometry
+      const polyline = {
+         type: "polyline",
+         paths: [
+            [146.27596, -41.36639], //Longitude, latitude
+            [146.27562, -41.36677], //Longitude, latitude
+            [146.27482, -41.36726], //Longitude, latitude
+            [146.27448, -41.36777], //Longitude, latitude
+            [146.27140, -41.37052], //Longitude, latitude
+            [146.27024, -41.37144], //Longitude, latitude
+            [146.26949, -41.37149], //Longitude, latitude
+            [146.26933, -41.37164], //Longitude, latitude
+            [146.26878, -41.37269], //Longitude, latitude
+            [146.26757, -41.37256], //Longitude, latitude
+            [146.26633, -41.37347], //Longitude, latitude
+            [146.26319, -41.37181] //Longitude, latitude
+            
+         ]
+      };
+      const simpleLineSymbol = {
+         type: "simple-line",
+         color: [224, 3, 51, 0.375], // Orange
+         width: 2
+      };
+
+      const popupTemplate = {
+         title: "{Name}",
+         content: "{Description}"
+      }
+      const attributes = {
+         Name: "Graphic",
+         Description: "I am a polyline"
+      }
+
+      const polylineGraphic = new Graphic({
+         geometry: polyline,
+         symbol: simpleLineSymbol,
+
+         attributes: attributes,
+         popupTemplate: popupTemplate
+      });
+      graphicsLayer.add(polylineGraphic);
+
+      
     </script>
 
   </head>
