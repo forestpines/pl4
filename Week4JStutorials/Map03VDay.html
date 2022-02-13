@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+    <title>ArcGIS API Valentines Map</title>
 
     <style>
       html,
@@ -14,8 +14,28 @@
         height: 100%;
         width: 100%;
       }
+       /* Embedded CSS styling for text legend and backgrounds */
+      
+      #title{
+        position: absolute;
+        top: 50px;
+        left: 12%;
+        z-index: 5;
+        background-color: rgba(18, 3, 77, 0.514);
+        border-radius: 20px;
+        color: rgb(159, 216, 216);
+        padding: 15px;
+        text-align: left;
+        font-family: "Oswald", "sans-serif";
+        line-height: 30px;
+        padding-left: 15px;
+        max-width: 500px;
+      }
+      #subtext{
+        line-height: 18px;
+      }
     </style>
-
+<!--JS reference  -->
     <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.22/"></script>
 
@@ -25,12 +45,12 @@
         esriConfig.apiKey = "AAPK57a67a5738474c6a90412e22770e2bd7TlVxqm4KfR7v5FfjH4mahFxQpBG3LvjixEKGd2aEVVZcXf-kpkwm7MD2W91y4rav";
 
         const map = new Map({
-          basemap: "arcgis-colored-pencil" // Basemap layer service
+          basemap: "arcgis-colored-pencil" // Basemap layer service - changed basemap from gallery
         });
 
         const view = new MapView({
           map: map,
-          center: [146.26373, -41.36992], // Longitude, latitude
+          center: [146.26373, -41.36992], // Longitude, latitude the Hamlet of Nowhere Else in Tasmania Australia
           zoom: 14, // Zoom level
           container: "viewDiv" // Div element
         });
@@ -40,6 +60,16 @@
 
   </head>
   <body>
+    <div id="title">
+      <h1>Smells Like a Teen Angst Collection </h1>
+      <h2>Port Weller to Lakeside Park, St.Catharines </h2>
+      <div id="subtext">
+        <p>With a bus system that stopped at 5pm on Sundays, teen me walked and biked everywhere. On foot, I lived too far from a movie theatre and would often float in a raft at Municipal Beach on a "good smell day" instead. With Nine Inch Nails on my headphones (or heaven forbid, the Godzilla soundtrack), I would walk all the way to the entrance of the Welland Canal and pretend I was on PEI. As an adult living beside an expressway, I sometimes miss the rumble of ships quietly rattling the dishes at night.</p>
+      </div>
+    </div>
+    <div id="legend">
+      <p><img src="https://img.icons8.com/doodle/40/000000/scream.png" alt="Scream Face">Rage Against the Machine Listening Site</p>
+    </div>
     <div id="viewDiv"></div>
   </body>
 </html>
