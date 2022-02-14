@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>ArcGIS API Valentines Map</title>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
 
     <style>
       html,
@@ -27,14 +29,14 @@
         color: rgb(255, 254, 254);
         padding: 10px;
         text-align: left;
-        font-family: cursive; 
+        font-family: 'Sofia'; 
         line-height: 25px;
         padding-left: 15px;
         max-width: 380px;
       }
       #subtext{
-        line-height: 16px;
-        font-family: "Century Gothic",Verdana,sans-serif; 
+        line-height: 18px;
+        font-family: 'Actor'; 
       }
     </style>
    <!--JS reference  -->
@@ -102,7 +104,7 @@
       };
       const simpleLineSymbol = {
          type: "simple-line",
-         color: [226, 119, 40], // Orange
+         color: [224, 3, 51, 0.375], // title color
          width: 2
       };
 
@@ -111,8 +113,8 @@
          content: "{Description}"
       }
       const attributes = {
-         Name: "Graphic",
-         Description: "I am a polyline"
+         Name: "The Path of Wishful Thinking",
+         Description: "Maybe there's a single person at the end of Hopes Rd and maybe they like sundried olives on a pizza?"
       }
 
       const polylineGraphic = new Graphic({
