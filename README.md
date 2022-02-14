@@ -10,3 +10,6 @@ https://fleming.maps.arcgis.com/home/item.html?id=3f7706b87dd84eaa90f2e076b78193
 
 ## REST API (without token)
 https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/week4list_treesdemoat/FeatureServer
+
+## Valentines Map
+https://forestpines.github.io/pl4/Week4JStutorials/Map03VDay.html
